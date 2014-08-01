@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 06</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+<style>
+    text {
+        font: 10px sans-serif;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var width = 600,
+                height = 400,
+                format = d3.format(",d"),
+                color = d3.scale.category20c();
+
+        var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("class", "bubble");
+
+        var p = d3.scale.category10();
+
+        d3.json("companies.json", function (error, memberList) {
+            console.log(memberList);
+
+            memberList.sort(function (a, b) {
+                return a.tax - b.tax
+            });
+
+            var node = svg.selectAll(".node")
+                    .data(memberList)
+                    .enter().append("g")
+                    .attr("class", "node")
+                    .attr("transform", function (d) {
+                        d.y = 200;
+                        return "translate(" + d.tax * 2.0 * width + "," + d.y + ")";
+                    });
+
+            node.append("circle")
+                    .attr("r", function (d) {
+                        return d.value;
+                    })
+                    .style("fill", function (d) {
+                        return "tan";
+                    })
+                    .style("stroke", function (d) {
+                        return "black";
+                    });
+
+            node.append("text")
+                    .attr("dy", ".3em")
+                    .style("text-anchor", "middle")
+                    .attr("transform", function (d) {
+                        return "translate(" + 0 + "," + (d.color == "white" ? -d.r : 0) + ")";
+                    })
+                    .text(function (d, i) {
+                        return d.name;
+                    });
+
+            d3.select(self.frameElement).style("height", diameter + "px");
+        });
+    });
+</script>
+</body>
+</html>

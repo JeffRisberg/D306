@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Ford",
+        "value": 40,
+        "tax": 0.23
+    },
+    {
+        "name": "Apple",
+        "value": 35,
+        "tax": 0.12
+    },
+    {
+        "name": "GE",
+        "value": 29,
+        "tax": 0.22
+    },
+    {
+        "name": "Amazon",
+        "value": 22,
+        "tax": 0.25
+    },
+    {
+        "name": "IBM",
+        "value": 12,
+        "tax": 0.55
+    },
+    {
+        "name": "AT&T",
+        "value": 10,
+        "tax": 0.45
+    },
+    {
+        "name": "US Steel",
+        "value": 12,
+        "tax": 0.44
+    },
+    {
+        "name": "3M",
+        "value": 20,
+        "tax": 0.12
+    },
+    {
+        "name": "Dell",
+        "value": 10,
+        "tax": 0.26
+    },
+    {
+        "name": "Oracle",
+        "value": 14,
+        "tax": 0.33
+    },
+    {
+        "name": "Microsoft",
+        "value": 22,
+        "tax": 0.21
+    }
+]
